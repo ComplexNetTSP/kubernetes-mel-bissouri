@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  mongo-db:
+    image: mongo:latest
+    container_name: mongo-db-container  
+    restart: always  
+    ports:
+      - '27017:27017'  
+    volumes:
+      - mongo_data:/data/db  
+      - mongo_config:/data/configdb  
