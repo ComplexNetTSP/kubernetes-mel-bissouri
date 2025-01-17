@@ -1,8 +1,6 @@
 from flask import Flask, request, render_template_string
 from datetime import datetime
 from pymongo import MongoClient
-import os
-
 
 
 app = Flask(__name__)
