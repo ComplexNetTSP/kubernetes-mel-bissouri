@@ -3,5 +3,5 @@ WORKDIR /app
 COPY . /app
 RUN pip install Flask pymongo
 EXPOSE 5000
-CMD ["python", "app_simple.py"]
+CMD ["python", "malak.py"]
 

@@ -13,8 +13,10 @@ def homepage():
         <body>
             <h1>Flask Simple App</h1>
             <p>Server Hostname: {server_name}</p>
+            <p><strong>Nom:</strong> Malak</p>
             <p>Current Date: {current_date}</p>
         </body>
+    
     </html>
     """
 
