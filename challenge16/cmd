@@ -1,0 +1,24 @@
+Appliquer le fichier du StatefulSet et service  :
+kubectl apply -f mongodb-statefulset.yaml
+kubectl apply -f mongo-service.yaml
+
+Vérifier que les pods marchent:
+kubectl get pods -n mbissouri
+
+Accéder au shell d'un des pods MongoDB pour initier le Replica Set :
+kubectl exec -it mongodb-0 -n mbissouri -- mongosh
+
+Appliquer cette commande pour configurer master et slave :
+mongo
+rs.initiate({
+  _id: "rs0",
+  members: [
+    { _id: 0, host: "mongodb-0.mongodb.mbissouri.svc.cluster.local:27017" },
+    { _id: 1, host: "mongodb-1.mongodb.mbissouri.svc.cluster.local:27017" },
+    { _id: 2, host: "mongodb-2.mongodb.mbissouri.svc.cluster.local:27017" }
+  ]
+})
+
+et rs.status() pour vérifier le service MongoDB
+
+

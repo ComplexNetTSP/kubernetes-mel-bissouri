@@ -1,0 +1,3 @@
+helm package .
+helm install mychart ./mychart-0.1.0.tgz -n mbissouri
+kubectl get pods -n mbissouri

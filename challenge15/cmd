@@ -1,0 +1,7 @@
+helm package .
+helm install mychart ./mychart-0.1.0.tgz -n mbissouri
+kubectl get pods -n mbissouri
+
+kubectl get networkpolicy -n mbissouri
+kubectl exec -it test-pod -n mbissouri -- /bin/sh
+nc -zv mongodb 27017
