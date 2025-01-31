@@ -1,0 +1,5 @@
+helm package .
+ca change maintenant a :helm install mychart ./mongodb-0.1.0.tgz -n mbissouri
+kubectl get pods -n mbissouri
+
+et on voit les pods de mongo db 

@@ -1,0 +1,49 @@
+namespace: mbissouri
+
+replicaCount: 3
+
+image:
+  webdb: "melbissouri/wedb:v13"
+  webnodb: "melbissouri/webnodb:v13"
+  mongodb: "mongo:latest"
+
+ports:
+  webnodb: 5000
+  webdb: 5000
+  mongodb: 27017
+
+hostnames:
+  ingressHost: net4255.luxbulb.org
+  webnodb: webnodb
+  webdb: webdb
+
+resources:
+  requests:
+    cpu: "0.1"
+    memory: "100Mi"
+  limits:
+    cpu: "0.2"
+    memory: "200Mi"
+
+mongodb:
+  image: mongo:latest
+  username: admin
+  password: admin
+  dbName: flask_app_db
+  collectionName: requests
+  storage: "300Mi"
+  replicaSet: rs0  
+  replicas: 3     
+  initScript: true 
+  persistence:
+    enabled: true
+    storageClass: "standard"  
+    accessMode: ReadWriteOnce
+    size: 5Gi
+  resources:
+    requests:
+      cpu: "0.1"
+      memory: "200Mi"
+    limits:
+      cpu: "0.5"
+      memory: "500Mi"
