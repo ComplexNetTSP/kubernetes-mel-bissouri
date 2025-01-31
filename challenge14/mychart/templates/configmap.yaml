@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: db-config
+  namespace: mbissouri
+data:
+  DB_HOST: mongodb-0.mongodb.mbissouri.svc.cluster.local
+  DB_PORT: "27017"
+  DB_USER: admin
+  DB_PASSWORD: admin
