@@ -27,18 +27,18 @@ def homepage():
     server_name = socket.gethostname()
     
     return f"""
-    <html>
-        <body>
-            <h1>Flask Docker App</h1>
-            <p>Your Name: Malak EL-BISSOURI</p>
-            <p>Project Name: Flask App + MongoDB</p>
-            <p>Version: V2</p>
-            <p>Server Hostname: {server_name}</p>
-            <p>Current Date: {current_date}</p>
-            <h2>Last 10 Requests:</h2>
-            <ul>{records_html}</ul>
-        </body>
-    </html>
+   <html>
+    <body>
+        <h1>Flask Docker App</h1>
+        <p>Your Name: Malak EL-BISSOURI</p>
+        <p>Project Name: Flask App + MongoDB</p>
+        <p>Version: V3</p>
+        <p>Server Hostname: {server_name}</p>
+        <p>Current Date: {current_date}</p>
+        <h2>Last 10 Requests:</h2>
+        <ul>{records_html}</ul>
+    </body>
+</html>
     """
 
 if __name__ == "__main__":
